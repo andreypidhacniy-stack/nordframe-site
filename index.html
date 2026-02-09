@@ -1,2 +1,381 @@
-Let's test Nordframe.
-Test with dev branch
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- ✅ NordFrame is the main company; TIMBRIC is a brand -->
+  <title>NordFrame — Modular Timber Construction</title>
+  <meta name="description" content="NordFrame is a modular timber construction company manufacturing prefabricated structures and branded products such as TIMBRIC®. Built in Latvia. Delivered across Europe." />
+  <link rel="canonical" href="https://nordframe.timbric.lv/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NordFrame — Modular Timber Construction" />
+  <meta property="og:description" content="Modular timber construction and prefabricated structures manufactured by NordFrame. Built in Latvia. Delivered across Europe." />
+  <meta property="og:url" content="https://nordframe.timbric.lv/" />
+  <!-- <meta property="og:image" content="https://nordframe.timbric.lv/img/og-nordframe.jpg" /> -->
+
+  <!-- Favicons -->
+  <!-- <link rel="icon" href="/img/favicon.ico" /> -->
+  <!-- <link rel="icon" type="image/svg+xml" href="/img/nordframe-icon.svg" /> -->
+
+  <style>
+    /* Minimal skeleton; replace with your real CSS */
+    :root { --radius: 14px; }
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+    a{color:inherit}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    .sr-only{position:absolute;left:-9999px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:var(--radius);text-decoration:none;border:1px solid #0000}
+    .btn-primary{border-color:#111;background:#111;color:#fff}
+    .btn-ghost{border-color:#bbb;background:#fff}
+    .grid{display:grid;gap:20px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+    .card{border:1px solid #e7e7e7;border-radius:var(--radius);padding:18px}
+    .section{padding:64px 0}
+    .section-header{margin-bottom:22px}
+    .kicker{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+    h1{font-size:44px;line-height:1.1;margin:10px 0 14px}
+    h2{font-size:28px;line-height:1.2;margin:0 0 10px}
+    h3{font-size:18px;margin:0 0 8px}
+    p{margin:0 0 12px}
+    ul{margin:0;padding-left:18px}
+    .muted{opacity:.75}
+  </style>
+
+  <!-- ✅ Structured data: NordFrame as Organization, TIMBRIC as Brand -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"NordFrame",
+    "url":"https://nordframe.timbric.lv/",
+    "description":"NordFrame is a modular timber construction company manufacturing prefabricated structures and branded products such as TIMBRIC®.",
+    "brand":{"@type":"Brand","name":"TIMBRIC"},
+    "areaServed":["Latvia","Sweden","Finland","Norway","Denmark","Estonia","Lithuania","Europe"],
+    "sameAs":[]
+  }
+  </script>
+</head>
+
+<body class="nf">
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <!-- =========================
+       Header / Navigation
+  ========================== -->
+  <header class="nf-header" id="top">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px;">
+      <a class="nf-brand" href="/" aria-label="NordFrame Home" style="text-decoration:none;">
+        <strong style="display:block;font-size:18px;letter-spacing:.02em;">NordFrame</strong>
+        <span class="muted" style="font-size:13px;">Modular Timber Construction</span>
+      </a>
+
+      <nav class="nf-nav" aria-label="Primary">
+        <ul style="list-style:none;display:flex;gap:16px;margin:0;padding:0;align-items:center;flex-wrap:wrap;">
+          <li><a class="nf-nav__link" href="#solutions">Solutions</a></li>
+          <li><a class="nf-nav__link" href="#standards">Standards</a></li>
+          <li><a class="nf-nav__link" href="#process">Process</a></li>
+          <li><a class="nf-nav__link" href="#brands">Brands</a></li>
+          <li><a class="nf-nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary" href="#contact">Request Consultation</a>
+    </div>
+  </header>
+
+  <main id="main" class="nf-main">
+    <!-- =========================
+         Hero (H1) — NordFrame only
+    ========================== -->
+    <section class="nf-hero section" id="home" style="padding-top:46px;">
+      <div class="container grid grid-2" style="align-items:center;">
+        <div class="nf-hero__content">
+          <p class="kicker nf-hero__kicker">Built in Latvia • Delivered across Europe</p>
+          <h1 class="nf-hero__title">Modular Timber Construction for Nordic-Grade Projects</h1>
+          <p class="nf-hero__subtitle muted">
+            NordFrame designs and manufactures prefabricated timber structures, frames, and elements for
+            developers, architects, and construction partners.
+          </p>
+
+          <div class="nf-hero__actions" style="display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 10px;">
+            <a class="btn btn-primary nf-btn nf-btn--primary" href="#contact">Get a Quote</a>
+            <a class="btn btn-ghost nf-btn nf-btn--ghost" href="#solutions">View Solutions</a>
+          </div>
+
+          <ul class="nf-hero__trust muted" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;padding-left:18px;">
+            <li>C24 structural timber</li>
+            <li>CNC precision</li>
+            <li>Transport-optimized modules</li>
+          </ul>
+        </div>
+
+        <div class="nf-hero__media" aria-hidden="true">
+          <!-- Put hero image/video here -->
+          <!-- <img class="nf-hero__image" src="/img/hero.jpg" alt="" /> -->
+          <div class="card" style="height:260px;display:flex;align-items:center;justify-content:center;">
+            <span class="muted">Hero media placeholder</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         About (H2 + H3)
+    ========================== -->
+    <section class="nf-about section" id="about">
+      <div class="container">
+        <header class="section-header nf-section__header">
+          <h2 class="nf-section__title">Engineered Modular Timber Construction</h2>
+          <p class="nf-section__lead muted">
+            We focus on repeatable quality, predictable assembly, and export-ready workflows.
+          </p>
+        </header>
+
+        <div class="grid grid-3 nf-cards">
+          <article class="card nf-card nf-card--about">
+            <h3 class="nf-card__title">Structural frames & load-bearing modules</h3>
+            <p class="nf-card__text muted">Engineered for speed, repeatability, and clean on-site installation.</p>
+          </article>
+
+          <article class="card nf-card nf-card--about">
+            <h3 class="nf-card__title">Wall, floor & roof elements</h3>
+            <p class="nf-card__text muted">Prefabricated elements produced under factory-controlled conditions.</p>
+          </article>
+
+          <article class="card nf-card nf-card--about">
+            <h3 class="nf-card__title">Custom solutions for partners</h3>
+            <p class="nf-card__text muted">Collaboration with architects, developers, and construction companies.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Solutions (H2 + H3 list)
+    ========================== -->
+    <section class="nf-solutions section" id="solutions">
+      <div class="container">
+        <header class="section-header">
+          <h2>Solutions</h2>
+          <p class="muted">Modules, structural frames, and prefabricated elements tailored to your project.</p>
+        </header>
+
+        <div class="grid grid-2">
+          <article class="card nf-solution">
+            <h3 class="nf-solution__title">Residential modules</h3>
+            <p class="nf-solution__text muted">Cabins, small houses, extensions, modular living units.</p>
+          </article>
+
+          <article class="card nf-solution">
+            <h3 class="nf-solution__title">Hospitality & leisure buildings</h3>
+            <p class="nf-solution__text muted">Guesthouses, glamping, modular resort buildings.</p>
+          </article>
+
+          <article class="card nf-solution">
+            <h3 class="nf-solution__title">Commercial & public structures</h3>
+            <p class="nf-solution__text muted">Timber structures for scalable, repeatable builds.</p>
+          </article>
+
+          <article class="card nf-solution">
+            <h3 class="nf-solution__title">Utility & technical modules</h3>
+            <p class="nf-solution__text muted">Service rooms and technical modules with fast deployment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Standards (H2 + H3)
+    ========================== -->
+    <section class="nf-standards section" id="standards">
+      <div class="container">
+        <header class="section-header">
+          <h2>Materials & Standards</h2>
+          <p class="muted">Nordic-grade materials, precision manufacturing, and consistent QC.</p>
+        </header>
+
+        <div class="grid grid-3">
+          <article class="card nf-standard">
+            <h3>C24 structural timber</h3>
+            <p class="muted">Suitable for load-bearing applications and durable frames.</p>
+          </article>
+          <article class="card nf-standard">
+            <h3>Moisture-controlled production</h3>
+            <p class="muted">Stability and quality controlled through manufacturing stages.</p>
+          </article>
+          <article class="card nf-standard">
+            <h3>CNC-precision cutting</h3>
+            <p class="muted">Tight tolerances for reliable assembly and repeatability.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Process (H2 + H3 steps)
+    ========================== -->
+    <section class="nf-process section" id="process">
+      <div class="container">
+        <header class="section-header">
+          <h2>Process</h2>
+          <p class="muted">A clear workflow that reduces on-site time and delivery risk.</p>
+        </header>
+
+        <ol class="nf-steps" style="margin:0;padding-left:18px;display:grid;gap:14px;">
+          <li class="card nf-step">
+            <h3 class="nf-step__title">1) Requirements & drawings</h3>
+            <p class="nf-step__text muted">Align specs, drawings, and delivery format (flat-pack / assembled).</p>
+          </li>
+          <li class="card nf-step">
+            <h3 class="nf-step__title">2) Engineering & production plan</h3>
+            <p class="nf-step__text muted">Confirm materials, tolerances, and manufacturing sequence.</p>
+          </li>
+          <li class="card nf-step">
+            <h3 class="nf-step__title">3) In-house manufacturing</h3>
+            <p class="nf-step__text muted">Controlled production with QC checkpoints.</p>
+          </li>
+          <li class="card nf-step">
+            <h3 class="nf-step__title">4) Packaging, logistics & on-site assembly</h3>
+            <p class="nf-step__text muted">Transport-ready delivery and clear assembly documentation.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =========================
+         Brands (H2 + H3) — TIMBRIC as brand under NordFrame
+    ========================== -->
+    <section class="nf-brands section" id="brands">
+      <div class="container">
+        <header class="section-header">
+          <h2>Our Brands</h2>
+          <p class="muted">Product lines developed and manufactured by NordFrame.</p>
+        </header>
+
+        <div class="grid grid-2">
+          <article class="card nf-brand-card">
+            <h3 class="nf-brand-card__title">TIMBRIC®</h3>
+            <p class="nf-brand-card__text muted">
+              Premium modular saunas and timber structures. Designed for export and fast installation.
+            </p>
+            <p class="muted" style="margin-bottom:14px;">
+              Explore products, visuals, and inquiries on the TIMBRIC website.
+            </p>
+            <a class="btn btn-ghost nf-brand-card__link" href="https://timbric.lv/" rel="noopener">Visit TIMBRIC →</a>
+          </article>
+
+          <article class="card nf-brand-card">
+            <h3 class="nf-brand-card__title">Custom / White-label Manufacturing</h3>
+            <p class="nf-brand-card__text muted">
+              We manufacture modular timber structures for partner brands, developers, and distributors.
+            </p>
+            <ul class="muted">
+              <li>Partner documentation & packaging</li>
+              <li>Repeatable production & QC</li>
+              <li>Export-ready logistics</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Contact (H2 + H3)
+    ========================== -->
+    <section class="nf-contact section" id="contact">
+      <div class="container">
+        <header class="section-header">
+          <h2>Contact NordFrame</h2>
+          <p class="muted">Tell us about your project — we’ll respond with next steps and a technical view.</p>
+        </header>
+
+        <div class="grid grid-2">
+          <!-- Contact form -->
+          <form class="card nf-form" method="post" action="/forms/lead">
+            <h3 class="nf-form__title">Request Consultation</h3>
+
+            <label class="nf-field" style="display:block;margin:10px 0;">
+              <span class="nf-field__label" style="display:block;margin-bottom:6px;">Name</span>
+              <input class="nf-field__input" type="text" name="name" autocomplete="name" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;" />
+            </label>
+
+            <label class="nf-field" style="display:block;margin:10px 0;">
+              <span class="nf-field__label" style="display:block;margin-bottom:6px;">Email</span>
+              <input class="nf-field__input" type="email" name="email" autocomplete="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;" />
+            </label>
+
+            <label class="nf-field" style="display:block;margin:10px 0;">
+              <span class="nf-field__label" style="display:block;margin-bottom:6px;">Company (optional)</span>
+              <input class="nf-field__input" type="text" name="company" autocomplete="organization" style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;" />
+            </label>
+
+            <label class="nf-field" style="display:block;margin:10px 0;">
+              <span class="nf-field__label" style="display:block;margin-bottom:6px;">Project details</span>
+              <textarea class="nf-field__input nf-field__textarea" name="message" rows="6" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;"></textarea>
+            </label>
+
+            <button class="btn btn-primary nf-btn nf-btn--primary" type="submit">Send Request</button>
+
+            <p class="nf-form__note muted" style="margin-top:10px;">
+              By submitting, you agree we may contact you about this inquiry.
+            </p>
+          </form>
+
+          <!-- Contact details -->
+          <aside class="card nf-contact__details" aria-label="Contact details">
+            <h3 class="nf-contact__title">Business Details</h3>
+
+            <ul class="nf-contact__list muted">
+              <li class="nf-contact__item"><strong>Company:</strong> NordFrame</li>
+              <li class="nf-contact__item"><strong>Email:</strong> <a class="nf-link" href="mailto:info@timbric.lv">info@timbric.lv</a></li>
+              <li class="nf-contact__item"><strong>Location:</strong> Latvia</li>
+              <li class="nf-contact__item"><strong>Exports:</strong> Scandinavia & Europe</li>
+            </ul>
+
+            <div class="nf-contact__cta" style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+              <a class="btn btn-ghost" href="#brands">View Brands</a>
+              <a class="btn btn-ghost" href="https://timbric.lv/" rel="noopener">TIMBRIC website</a>
+            </div>
+
+            <p class="muted" style="margin-top:14px;">
+              TIMBRIC® is a product brand developed and manufactured by NordFrame.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       Footer — NordFrame primary, TIMBRIC as brand
+  ========================== -->
+  <footer class="nf-footer" style="border-top:1px solid #eee;padding:28px 0;">
+    <div class="container" style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;justify-content:space-between;">
+      <div class="nf-footer__brand">
+        <strong class="nf-footer__name" style="display:block;">NordFrame</strong>
+        <span class="nf-footer__tag muted">Modular Timber Construction</span>
+      </div>
+
+      <nav class="nf-footer__nav" aria-label="Footer" style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a class="nf-footer__link" href="#top">Back to top</a>
+        <a class="nf-footer__link" href="/privacy">Privacy</a>
+        <a class="nf-footer__link" href="/terms">Terms</a>
+      </nav>
+
+      <small class="nf-footer__copy muted">
+        © <span id="year"></span> NordFrame. All rights reserved.<br />
+        TIMBRIC® is a brand of NordFrame.
+      </small>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
