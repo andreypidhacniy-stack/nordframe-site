@@ -98,7 +98,14 @@ img{ max-width:100%; display:block; }
   gap: 18px;
   padding: 14px var(--pad);
 }
-
+/* ============================
+   NordFrame Logo
+   ============================ */
+.nf-logo{
+  height: 34px;
+  width: auto;
+  display: block;
+}
 .nf-brand{
   text-decoration:none;
   display:flex;
