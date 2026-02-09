@@ -1,0 +1,21 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="360" fill="#2A2A28"></rect>
+
+  <!-- ICON -->
+  <g stroke="#EDE7DF" stroke-width="10" fill="none" stroke-linecap="square" shape-rendering="geometricPrecision">
+    <rect x="60" y="80" width="200" height="200"></rect>
+    <line x1="160" y1="80" x2="160" y2="280"></line>
+    <line x1="60" y1="140" x2="160" y2="140"></line>
+    <line x1="160" y1="220" x2="260" y2="220"></line>
+  </g>
+
+  <!-- WORDMARK -->
+  <text x="320" y="185" font-family="Inter, Helvetica, Arial, sans-serif" font-size="120" font-weight="600" letter-spacing="6" fill="#EDE7DF">
+    NORDFRAME
+  </text>
+
+  <!-- TAGLINE -->
+  <text x="320" y="245" font-family="Inter, Helvetica, Arial, sans-serif" font-size="40" font-weight="500" letter-spacing="4" fill="#D8D2C9">
+    MODULAR TIMBER STRUCTURES
+  </text>
+</svg>
