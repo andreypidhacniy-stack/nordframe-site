@@ -42,19 +42,24 @@ body.nf{
   color: var(--text);
 
   /* wood planks but subtle */
+/* --- Background: warm light wood, very subtle planks --- */
+body.nf{
   background:
+    /* planks 5–8% opacity */
     repeating-linear-gradient(
       90deg,
       rgba(150,120,90,.06) 0px,
-      rgba(150,120,90,.06) 120px,
-      rgba(170,140,105,.10) 120px,
-      rgba(170,140,105,.10) 122px
+      rgba(150,120,90,.06) 140px,
+      rgba(170,140,105,.08) 140px,
+      rgba(170,140,105,.08) 142px
     ),
+    /* warm light */
     radial-gradient(
       1100px 700px at 50% -12%,
-      rgba(230,205,165,.30),
+      rgba(230,205,165,.28),
       transparent 62%
     ),
+    /* base */
     linear-gradient(
       180deg,
       #2f261c 0%,
@@ -62,6 +67,7 @@ body.nf{
       #1f1912 100%
     );
 }
+
 
 a{ color:inherit; }
 a:hover{ opacity:.98; }
@@ -157,33 +163,89 @@ img{ max-width:100%; display:block; }
   background: rgba(255,255,255,.04);
 }
 
-/*HERO*/--------------------------------------------------------------------------------------------
-.nf-hero__content{
-  position: relative;
-  z-index: 1;
+/*HERO*/
+/* --- Hero layout --- */
+.nf-hero{
+  padding-top: 28px;
+  padding-bottom: 72px;
 }
 
+.nf-hero__wrap{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Clean panel like your “Requirements & drawings” feel */
 .nf-hero__panel{
-  max-width: 640px;
-  background: rgba(35,28,20,.72);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(35,28,20,.72);   /* clean readable surface */
   border-radius: 22px;
   padding: 42px 36px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  box-shadow: 0 10px 26px rgba(0,0,0,.25);
 }
 
-.nf-hero__content{
-  position: relative;
-  z-index: 1;
+/* Title/subtitle */
+.nf-hero__title{
+  margin-top: 10px;
 }
 
-.nf-hero__panel{
-  max-width: 640px;
-  background: rgba(35,28,20,.72);
+.nf-hero__subtitle{
+  max-width: 60ch;
+}
+
+/* CTA row */
+.nf-hero__actions{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 18px 0 10px;
+}
+
+/* Chips */
+.nf-hero__chips{
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.nf-hero__chips li{
+  font-size: 13px;
+  color: rgba(255,255,255,.78);
+  padding: 8px 10px;
+  border-radius: 999px;
   border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+
+/* Media card */
+.nf-hero__media{
   border-radius: 22px;
-  padding: 42px 36px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+.nf-hero__mediaInner{
+  height: 100%;
+  min-height: 320px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding: 18px;
+}
+
+/* Mobile */
+@media (max-width: 920px){
+  .nf-hero__wrap{
+    grid-template-columns: 1fr;
+  }
+  .nf-hero__panel{
+    padding: 32px 18px;
+  }
+  .nf-hero__mediaInner{
+    min-height: 220px;
+  }
 }
 
 /* push nav right */
