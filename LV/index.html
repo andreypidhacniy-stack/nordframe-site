@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>NordFrame — Modulārās koka konstrukcijas</title>
-  <meta name="description" content="NordFrame ražo modulārās koka konstrukcijas, rāmjus un prefabrikātus risinājumus dzīvojamām un komerciālām ēkām. Ražots Latvijā, piegāde Eiropā." />
-
-  <!-- Canonical -->
+  <meta name="description" content="NordFrame ir modulāro koka konstrukciju uzņēmums, kas ražo prefabrikātus risinājumus un zīmolproduktus, piemēram, TIMBRIC®. Ražots Latvijā. Piegāde visā Eiropā." />
   <link rel="canonical" href="https://nordframe.timbric.lv/lv/" />
 
   <!-- Hreflang -->
@@ -15,46 +13,52 @@
   <link rel="alternate" hreflang="en" href="https://nordframe.timbric.lv/" />
   <link rel="alternate" hreflang="x-default" href="https://nordframe.timbric.lv/" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/style.css" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NordFrame — Modulārās koka konstrukcijas" />
+  <meta property="og:description" content="Modulārās koka konstrukcijas un prefabrikāti risinājumi, ko ražo NordFrame. Ražots Latvijā. Piegāde visā Eiropā." />
+  <meta property="og:url" content="https://nordframe.timbric.lv/lv/" />
+  <!-- <meta property="og:image" content="https://nordframe.timbric.lv/img/og-nordframe.jpg" /> -->
 
   <!-- Favicons -->
-  <link rel="icon" href="/img/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="/img/Nordframe_favikon.svg">
-  <meta name="theme-color" content="#0b0c0f" />
+  <link rel="icon" href="/img/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/img/Nordframe_favikon.svg" />
+
+  <!-- Structured data: NordFrame as Organization, TIMBRIC as Brand -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"NordFrame",
+    "url":"https://nordframe.timbric.lv/",
+    "description":"NordFrame ir modulāro koka konstrukciju uzņēmums, kas ražo prefabrikātus risinājumus un zīmolproduktus, piemēram, TIMBRIC®.",
+    "brand":{"@type":"Brand","name":"TIMBRIC"},
+    "areaServed":["Latvija","Zviedrija","Somija","Norvēģija","Dānija","Igaunija","Lietuva","Eiropa"],
+    "sameAs":[]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body class="nf">
   <a class="sr-only" href="#main">Pāriet uz saturu</a>
 
   <!-- =========================
-       Header
+       Header / Navigation (Desktop + Mobile)
   ========================== -->
-     
-       <header class="nf-header" id="top">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px;">
-     <!-- <a class="nf-brand" href="/" aria-label="NordFrame Home" style="text-decoration:none;">
-        <strong style="display:block;font-size:18px;letter-spacing:.02em;">NordFrame</strong>
-        <span class="muted" style="font-size:13px;">Modular Timber Construction</span>
+  <header class="nf-header" id="top">
+    <div class="container nf-header__inner">
+      <!-- Brand -->
+      <a class="nf-brand" href="/lv/" aria-label="NordFrame sākumlapa">
+        <img src="/img/nordframe-logo.svg" alt="NordFrame" class="nf-logo" />
       </a>
-  -->
-<!NORdframe Logo-->
-  <a class="nf-brand" href="/" aria-label="NordFrame sākumlapa">
-  <img 
-    src="/img/Nordframe_logo_W.svg"
-    alt="NordFrame — modulārās koka konstrukcijas"
-    class="nf-logo"
-  />
-</a>
-      
-      
-    
 
-  <link rel="alternate" hreflang="lv" href="https://nordframe.timbric.lv/lv/" />
-  <link rel="alternate" hreflang="en" href="https://nordframe.timbric.lv/" />
-<a href="/" class="lang-switch">EN</a>
-      
-      <nav class="nf-nav" aria-label="Galvenā navigācija">
+      <!-- Mobile toggle (CSS-only) -->
+      <input type="checkbox" id="nf-nav-toggle" class="nf-nav__toggle" aria-label="Atvērt izvēlni" />
+
+      <!-- Desktop nav -->
+      <nav class="nf-nav nf-nav--desktop" aria-label="Galvenā navigācija">
         <ul>
           <li><a href="#solutions">Risinājumi</a></li>
           <li><a href="#standards">Standarti</a></li>
@@ -64,41 +68,69 @@
         </ul>
       </nav>
 
-    
-       <a class="btn btn-primary" href="#contact">Pieteikt konsultāciju</a>
+      <!-- Desktop language button -->
+      <a class="btn nf-lang nf-lang--desktop" href="/" aria-label="Pārslēgt uz angļu valodu">EN</a>
+
+      <!-- Burger button -->
+      <label for="nf-nav-toggle" class="nf-burger" aria-label="Atvērt/aizvērt izvēlni">
+        <span></span><span></span><span></span>
+      </label>
+
+      <!-- Mobile panel -->
+      <div class="nf-nav__panel" role="dialog" aria-label="Mobilā izvēlne">
+        <div class="nf-nav__panel-head">
+          <span class="muted">Izvēlne</span>
+          <label for="nf-nav-toggle" class="nf-nav__close" aria-label="Aizvērt izvēlni">✕</label>
+        </div>
+
+        <nav class="nf-nav nf-nav--mobile" aria-label="Mobilā navigācija">
+          <a href="#solutions" class="nf-nav__item">Risinājumi</a>
+          <a href="#standards" class="nf-nav__item">Standarti</a>
+          <a href="#process" class="nf-nav__item">Process</a>
+          <a href="#brands" class="nf-nav__item">Zīmoli</a>
+          <a href="#contact" class="nf-nav__item">Kontakti</a>
+        </nav>
+
+        <div class="nf-nav__panel-foot">
+          <a class="btn" href="/">EN</a>
+          <a class="btn btn-primary" href="#contact">Pieteikt konsultāciju</a>
+        </div>
+      </div>
+
+      <!-- Backdrop (click to close) -->
+      <label for="nf-nav-toggle" class="nf-nav__backdrop" aria-label="Aizvērt izvēlni"></label>
     </div>
   </header>
 
-  <main id="main">
-
+  <main id="main" class="nf-main">
     <!-- =========================
-         Hero
+         Hero (H1)
     ========================== -->
-    <section class="nf-hero section">
+    <section class="nf-hero section" id="home">
       <div class="container grid grid-2">
         <div class="nf-hero__content">
-          <p class="kicker">Ražots Latvijā • Piegāde Eiropā</p>
-          <h1>Modulārās koka konstrukcijas mūsdienīgiem projektiem</h1>
+          <p class="kicker nf-hero__kicker">Ražots Latvijā • Piegāde visā Eiropā</p>
+          <h1 class="nf-hero__title">Modulārās koka konstrukcijas Ziemeļvalstu līmeņa projektiem</h1>
           <p class="nf-hero__subtitle muted">
-            NordFrame projektē un ražo prefabrikātas koka konstrukcijas,
-            rāmjus un moduļus attīstītājiem, arhitektiem un būvniecības partneriem.
+            NordFrame projektē un ražo prefabrikātas koka konstrukcijas, rāmjus un elementus
+            attīstītājiem, arhitektiem un būvniecības partneriem.
           </p>
 
           <div class="nf-hero__actions">
-            <a href="#contact" class="btn btn-primary">Pieteikt konsultāciju</a>
-            <a href="#solutions" class="btn">Skatīt risinājumus</a>
+            <a class="btn btn-primary nf-btn nf-btn--primary" href="#contact">Saņemt piedāvājumu</a>
+            <a class="btn nf-btn nf-btn--ghost" href="#solutions">Skatīt risinājumus</a>
           </div>
 
-          <ul class="nf-hero__trust">
+          <ul class="nf-hero__trust muted">
             <li>C24 konstrukciju koksne</li>
-            <li>CNC precīza apstrāde</li>
+            <li>CNC precizitāte</li>
             <li>Transportam optimizēti moduļi</li>
           </ul>
         </div>
 
-        <div class="nf-hero__media">
+        <div class="nf-hero__media" aria-hidden="true">
           <div class="card">
-            <p class="muted">Hero attēls / video</p>
+            <span class="muted">Hero vizuāļa vietturis</span>
           </div>
         </div>
       </div>
@@ -107,28 +139,30 @@
     <!-- =========================
          About
     ========================== -->
-    <section class="section">
+    <section class="nf-about section" id="about">
       <div class="container">
-        <div class="section-header">
-          <h2>Inženiertehniskas modulārās koka konstrukcijas</h2>
-          <p class="muted">
-            Fokusējamies uz atkārtojamu kvalitāti, paredzamu montāžu un eksportam gataviem risinājumiem.
+        <header class="section-header nf-section__header">
+          <h2 class="nf-section__title">Inženiertehniskas modulārās koka konstrukcijas</h2>
+          <p class="nf-section__lead muted">
+            Fokusējamies uz atkārtojamu kvalitāti, paredzamu montāžu un eksportam gatavu piegādes procesu.
           </p>
-        </div>
+        </header>
 
-        <div class="grid grid-3">
-          <div class="card">
-            <h3>Nesošie rāmji un konstrukcijas</h3>
-            <p class="muted">Projektēti ātrai montāžai un ilgmūžībai.</p>
-          </div>
-          <div class="card">
-            <h3>Sienu, grīdu un jumta elementi</h3>
-            <p class="muted">Ražoti kontrolētos darbnīcas apstākļos.</p>
-          </div>
-          <div class="card">
-            <h3>Pielāgoti risinājumi partneriem</h3>
-            <p class="muted">Sadarbība ar arhitektiem un attīstītājiem.</p>
-          </div>
+        <div class="grid grid-3 nf-cards">
+          <article class="card nf-card nf-card--about">
+            <h3 class="nf-card__title">Nesošie rāmji un konstrukcijas</h3>
+            <p class="nf-card__text muted">Projektēti ātrai montāžai un uzticamai ekspluatācijai.</p>
+          </article>
+
+          <article class="card nf-card nf-card--about">
+            <h3 class="nf-card__title">Sienu, grīdu un jumta elementi</h3>
+            <p class="nf-card__text muted">Prefabrikāti elementi ražoti kontrolētos darbnīcas apstākļos.</p>
+          </article>
+
+          <article class="card nf-card nf-card--about">
+            <h3 class="nf-card__title">Pielāgoti risinājumi partneriem</h3>
+            <p class="nf-card__text muted">Sadarbība ar arhitektiem, attīstītājiem un būvniekiem.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -136,30 +170,33 @@
     <!-- =========================
          Solutions
     ========================== -->
-    <section class="section" id="solutions">
+    <section class="nf-solutions section" id="solutions">
       <div class="container">
-        <div class="section-header">
+        <header class="section-header">
           <h2>Risinājumi</h2>
-          <p class="muted">Moduļi, rāmji un prefabrikāti dažādiem projektiem.</p>
-        </div>
+          <p class="muted">Moduļi, konstrukciju rāmji un prefabrikāti elementi, pielāgoti jūsu projektam.</p>
+        </header>
 
         <div class="grid grid-2">
-          <div class="card">
-            <h3>Dzīvojamie moduļi</h3>
-            <p class="muted">Mazās mājas, moduļu ēkas, paplašinājumi.</p>
-          </div>
-          <div class="card">
-            <h3>Viesmīlības un atpūtas būves</h3>
-            <p class="muted">Viesu nami, kempingi, SPA un atpūtas projekti.</p>
-          </div>
-          <div class="card">
-            <h3>Komerciālās un publiskās ēkas</h3>
-            <p class="muted">Atkārtojami risinājumi uzņēmumiem un pašvaldībām.</p>
-          </div>
-          <div class="card">
-            <h3>Tehniskie un saimniecības moduļi</h3>
-            <p class="muted">Ātri uzstādāmas tehniskās telpas.</p>
-          </div>
+          <article class="card nf-solution">
+            <h3 class="nf-solution__title">Dzīvojamie moduļi</h3>
+            <p class="nf-solution__text muted">Mājas, piebūves, dzīvojamie moduļi un mazas ēkas.</p>
+          </article>
+
+          <article class="card nf-solution">
+            <h3 class="nf-solution__title">Viesmīlības un atpūtas būves</h3>
+            <p class="nf-solution__text muted">Viesu nami, glampingi, atpūtas un kūrortu risinājumi.</p>
+          </article>
+
+          <article class="card nf-solution">
+            <h3 class="nf-solution__title">Komerciālās un publiskās ēkas</h3>
+            <p class="nf-solution__text muted">Koka konstrukcijas atkārtojamiem un mērogojamiem projektiem.</p>
+          </article>
+
+          <article class="card nf-solution">
+            <h3 class="nf-solution__title">Saimniecības un tehniskie moduļi</h3>
+            <p class="nf-solution__text muted">Tehniskās telpas un moduļi ar ātru uzstādīšanu objektā.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -167,26 +204,26 @@
     <!-- =========================
          Standards
     ========================== -->
-    <section class="section" id="standards">
+    <section class="nf-standards section" id="standards">
       <div class="container">
-        <div class="section-header">
+        <header class="section-header">
           <h2>Materiāli un standarti</h2>
-          <p class="muted">Ziemeļvalstu kvalitāte un precīza ražošana.</p>
-        </div>
+          <p class="muted">Ziemeļvalstu līmeņa materiāli, precīza ražošana un vienmērīga kvalitātes kontrole.</p>
+        </header>
 
         <div class="grid grid-3">
-          <div class="card">
+          <article class="card nf-standard">
             <h3>C24 konstrukciju koksne</h3>
-            <p class="muted">Piemērota nesošām konstrukcijām.</p>
-          </div>
-          <div class="card">
-            <h3>Mitruma kontrole</h3>
-            <p class="muted">Stabilitāte un kvalitāte ražošanas procesā.</p>
-          </div>
-          <div class="card">
-            <h3>CNC precizitāte</h3>
-            <p class="muted">Precīzas tolerances drošai montāžai.</p>
-          </div>
+            <p class="muted">Piemērota nesošām konstrukcijām un ilgmūžīgiem rāmjiem.</p>
+          </article>
+          <article class="card nf-standard">
+            <h3>Mitruma kontrole ražošanā</h3>
+            <p class="muted">Stabilitāte un kvalitāte kontrolēta ražošanas posmos.</p>
+          </article>
+          <article class="card nf-standard">
+            <h3>CNC precīza apstrāde</h3>
+            <p class="muted">Tight tolerances drošai montāžai un atkārtojamībai.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -194,29 +231,29 @@
     <!-- =========================
          Process
     ========================== -->
-    <section class="section" id="process">
+    <section class="nf-process section" id="process">
       <div class="container">
-        <div class="section-header">
-          <h2>Darba process</h2>
-          <p class="muted">No rasējuma līdz montāžai objektā.</p>
-        </div>
+        <header class="section-header">
+          <h2>Process</h2>
+          <p class="muted">Skaidrs darba process, kas samazina laiku objektā un piegādes riskus.</p>
+        </header>
 
         <ol class="nf-steps">
-          <li class="card">
-            <h3>1. Tehniskā specifikācija</h3>
-            <p class="muted">Rasējumi un projekta prasības.</p>
+          <li class="card nf-step">
+            <h3 class="nf-step__title">1) Prasības un rasējumi</h3>
+            <p class="nf-step__text muted">Saskaņojam specifikāciju, rasējumus un piegādes formātu (flat-pack / salikts).</p>
           </li>
-          <li class="card">
-            <h3>2. Projektēšana un sagatavošana</h3>
-            <p class="muted">Materiāli, tolerances, ražošanas plāns.</p>
+          <li class="card nf-step">
+            <h3 class="nf-step__title">2) Projektēšana un ražošanas plāns</h3>
+            <p class="nf-step__text muted">Apstiprinām materiālus, tolerances un ražošanas secību.</p>
           </li>
-          <li class="card">
-            <h3>3. Ražošana</h3>
-            <p class="muted">Kontrolēta ražošana NordFrame darbnīcā.</p>
+          <li class="card nf-step">
+            <h3 class="nf-step__title">3) Ražošana</h3>
+            <p class="nf-step__text muted">Kontrolēta ražošana ar kvalitātes pārbaudēm.</p>
           </li>
-          <li class="card">
-            <h3>4. Piegāde un montāža</h3>
-            <p class="muted">Loģistika un uzstādīšana objektā.</p>
+          <li class="card nf-step">
+            <h3 class="nf-step__title">4) Iepakošana, loģistika un montāža</h3>
+            <p class="nf-step__text muted">Transportam gatava piegāde un skaidra montāžas dokumentācija.</p>
           </li>
         </ol>
       </div>
@@ -225,28 +262,36 @@
     <!-- =========================
          Brands
     ========================== -->
-    <section class="section" id="brands">
+    <section class="nf-brands section" id="brands">
       <div class="container">
-        <div class="section-header">
+        <header class="section-header">
           <h2>Mūsu zīmoli</h2>
-        </div>
+          <p class="muted">Produktu līnijas, ko izstrādā un ražo NordFrame.</p>
+        </header>
 
         <div class="grid grid-2">
-          <div class="card">
-            <h3>TIMBRIC®</h3>
-            <p class="muted">
-              Premium moduļu pirtis un koka konstrukcijas,
-              izstrādātas un ražotas NordFrame.
+          <article class="card nf-brand-card">
+            <h3 class="nf-brand-card__title">TIMBRIC®</h3>
+            <p class="nf-brand-card__text muted">
+              Premium moduļu pirtis un koka konstrukcijas. Paredzētas eksportam un ātrai montāžai.
             </p>
-            <a href="https://timbric.lv" class="btn">Apmeklēt TIMBRIC</a>
-          </div>
+            <p class="muted">
+              Produkti, vizuāļi un pieprasījumi — TIMBRIC mājaslapā.
+            </p>
+            <a class="btn nf-brand-card__link" href="https://timbric.lv/" rel="noopener">Apmeklēt TIMBRIC →</a>
+          </article>
 
-          <div class="card">
-            <h3>White-label ražošana</h3>
-            <p class="muted">
-              Modulāru koka konstrukciju ražošana partneru zīmoliem.
+          <article class="card nf-brand-card">
+            <h3 class="nf-brand-card__title">Pielāgota / White-label ražošana</h3>
+            <p class="nf-brand-card__text muted">
+              Ražojam modulārās koka konstrukcijas partneru zīmoliem, attīstītājiem un izplatītājiem.
             </p>
-          </div>
+            <ul class="muted">
+              <li>Partneru dokumentācija un iepakojums</li>
+              <li>Atkārtojama ražošana un kvalitātes kontrole</li>
+              <li>Eksportam gatava loģistika</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -254,50 +299,94 @@
     <!-- =========================
          Contact
     ========================== -->
-    <section class="section" id="contact">
+    <section class="nf-contact section" id="contact">
       <div class="container">
-        <div class="section-header">
-          <h2>Kontakti</h2>
-          <p class="muted">
-            Sazinieties ar mums, lai pārrunātu jūsu projektu.
-          </p>
-        </div>
+        <header class="section-header">
+          <h2>Sazināties ar NordFrame</h2>
+          <p class="muted">Pastāstiet par projektu — atbildēsim ar nākamajiem soļiem un tehnisko skatījumu.</p>
+        </header>
 
         <div class="grid grid-2">
-          <form class="card nf-form">
-            <h3>Pieteikt konsultāciju</h3>
-            <p class="muted">Aprakstiet savu projektu vai ideju.</p>
+          <form class="card nf-form" method="post" action="/forms/lead">
+            <h3 class="nf-form__title">Pieteikt konsultāciju</h3>
+
+            <label class="nf-field">
+              <span class="nf-field__label">Vārds</span>
+              <input class="nf-field__input" type="text" name="name" autocomplete="name" required />
+            </label>
+
+            <label class="nf-field">
+              <span class="nf-field__label">E-pasts</span>
+              <input class="nf-field__input" type="email" name="email" autocomplete="email" required />
+            </label>
+
+            <label class="nf-field">
+              <span class="nf-field__label">Uzņēmums (nav obligāti)</span>
+              <input class="nf-field__input" type="text" name="company" autocomplete="organization" />
+            </label>
+
+            <label class="nf-field">
+              <span class="nf-field__label">Projekta detaļas</span>
+              <textarea class="nf-field__input nf-field__textarea" name="message" rows="6" required></textarea>
+            </label>
+
+            <button class="btn btn-primary nf-btn nf-btn--primary" type="submit">Nosūtīt pieprasījumu</button>
+
+            <p class="nf-form__note muted">
+              Iesniedzot, jūs piekrītat, ka varam ar jums sazināties par šo pieprasījumu.
+            </p>
           </form>
 
-          <div class="card">
-            <h3>NordFrame</h3>
+          <aside class="card nf-contact__details" aria-label="Kontaktinformācija">
+            <h3 class="nf-contact__title">Rekvizīti</h3>
+
+            <ul class="nf-contact__list muted">
+              <li class="nf-contact__item"><strong>Uzņēmums:</strong> NordFrame</li>
+              <li class="nf-contact__item"><strong>E-pasts:</strong> <a class="nf-link" href="mailto:info@timbric.lv">info@timbric.lv</a></li>
+              <li class="nf-contact__item"><strong>Atrašanās vieta:</strong> Latvija</li>
+              <li class="nf-contact__item"><strong>Eksports:</strong> Skandināvija un Eiropa</li>
+            </ul>
+
+            <div class="nf-contact__cta">
+              <a class="btn" href="#brands">Skatīt zīmolus</a>
+              <a class="btn" href="https://timbric.lv/" rel="noopener">TIMBRIC mājaslapa</a>
+            </div>
+
             <p class="muted">
-              E-pasts: <a href="mailto:info@timbric.lv">info@timbric.lv</a><br>
-              Ražošana: Latvijā<br>
-              Piegāde: Eiropa
+              TIMBRIC® ir NordFrame zīmols.
             </p>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- =========================
        Footer
   ========================== -->
   <footer class="nf-footer">
-    <div class="container grid grid-2">
-      <div>
-        <strong>NordFrame</strong><br>
-        <span class="muted">Modulārās koka konstrukcijas</span>
+    <div class="container nf-footer__inner">
+      <div class="nf-footer__brand">
+        <strong class="nf-footer__name">NordFrame</strong>
+        <span class="nf-footer__tag muted">Modulārās koka konstrukcijas</span>
       </div>
-      <div class="nf-footer__nav">
-        <a href="#top">Uz augšu</a>
-        <a href="/">EN</a>
-      </div>
-    </div>
-  </footer>
 
+      <nav class="nf-footer__nav" aria-label="Kājene">
+        <a class="nf-footer__link" href="#top">Uz augšu</a>
+        <a class="nf-footer__link" href="/privacy">Privātums</a>
+        <a class="nf-footer__link" href="/terms">Noteikumi</a>
+      </nav>
+
+      <small class="nf-footer__copy muted">
+        © <span id="year"></span> NordFrame. Visas tiesības aizsargātas.<br />
+        TIMBRIC® ir NordFrame zīmols.
+      </small>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
 </body>
 </html>
+
