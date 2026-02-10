@@ -47,60 +47,63 @@
   <!-- =========================
        Header / Navigation (Desktop + Mobile)
   ========================== -->
-  <header class="nf-header" id="top">
-    <div class="container nf-header__inner">
-      <!-- Brand -->
-      <a class="nf-brand" href="/lv/" aria-label="NordFrame sākumlapa">
-        <img src="/img/nordframe-logo.svg" alt="NordFrame" class="nf-logo" />
-      </a>
+ <header class="nf-header" id="top">
+  <div class="container nf-header__inner">
+    <!-- Brand -->
+    <a class="nf-brand" href="/lv/" aria-label="NordFrame sākumlapa">
+      <img src="/img/nordframe-logo.svg" alt="NordFrame" class="nf-logo" />
+    </a>
 
-      <!-- Mobile toggle (CSS-only) -->
-      <input type="checkbox" id="nf-nav-toggle" class="nf-nav__toggle" aria-label="Atvērt izvēlni" />
+    <!-- Language switch as TEXT (like your screenshot) -->
+    <a class="nf-langlink" href="/" aria-label="Switch to English">EN</a>
 
-      <!-- Desktop nav -->
-      <nav class="nf-nav nf-nav--desktop" aria-label="Galvenā navigācija">
-        <ul>
-          <li><a href="#solutions">Risinājumi</a></li>
-          <li><a href="#standards">Standarti</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#brands">Zīmoli</a></li>
-          <li><a href="#contact">Kontakti</a></li>
-        </ul>
-      </nav>
+    <!-- Mobile toggle (CSS-only) -->
+    <input type="checkbox" id="nf-nav-toggle" class="nf-nav__toggle" aria-label="Atvērt izvēlni" />
 
-      <!-- Desktop language button -->
-      <a class="btn nf-lang nf-lang--desktop" href="/" aria-label="Pārslēgt uz angļu valodu">EN</a>
+    <!-- Desktop nav -->
+    <nav class="nf-nav nf-nav--desktop" aria-label="Galvenā navigācija">
+      <ul>
+        <li><a href="#solutions">Risinājumi</a></li>
+        <li><a href="#standards">Standarti</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#brands">Zīmoli</a></li>
+        <li><a href="#contact">Kontakti</a></li>
+      </ul>
+    </nav>
 
-      <!-- Burger button -->
-      <label for="nf-nav-toggle" class="nf-burger" aria-label="Atvērt/aizvērt izvēlni">
-        <span></span><span></span><span></span>
-      </label>
+    <!-- Desktop CTA (stays on the right) -->
+    <a class="btn btn-primary nf-cta" href="#contact">Pieteikt konsultāciju</a>
 
-      <!-- Mobile panel -->
-      <div class="nf-nav__panel" role="dialog" aria-label="Mobilā izvēlne">
-        <div class="nf-nav__panel-head">
-          <span class="muted">Izvēlne</span>
-          <label for="nf-nav-toggle" class="nf-nav__close" aria-label="Aizvērt izvēlni">✕</label>
-        </div>
+    <!-- Burger (mobile) -->
+    <label for="nf-nav-toggle" class="nf-burger" aria-label="Atvērt/aizvērt izvēlni">
+      <span></span><span></span><span></span>
+    </label>
 
-        <nav class="nf-nav nf-nav--mobile" aria-label="Mobilā navigācija">
-          <a href="#solutions" class="nf-nav__item">Risinājumi</a>
-          <a href="#standards" class="nf-nav__item">Standarti</a>
-          <a href="#process" class="nf-nav__item">Process</a>
-          <a href="#brands" class="nf-nav__item">Zīmoli</a>
-          <a href="#contact" class="nf-nav__item">Kontakti</a>
-        </nav>
-
-        <div class="nf-nav__panel-foot">
-          <a class="btn" href="/">EN</a>
-          <a class="btn btn-primary" href="#contact">Pieteikt konsultāciju</a>
-        </div>
+    <!-- Mobile panel -->
+    <div class="nf-nav__panel" role="dialog" aria-label="Mobilā izvēlne">
+      <div class="nf-nav__panel-head">
+        <span class="muted">Izvēlne</span>
+        <label for="nf-nav-toggle" class="nf-nav__close" aria-label="Aizvērt izvēlni">✕</label>
       </div>
 
-      <!-- Backdrop (click to close) -->
-      <label for="nf-nav-toggle" class="nf-nav__backdrop" aria-label="Aizvērt izvēlni"></label>
+      <nav class="nf-nav nf-nav--mobile" aria-label="Mobilā navigācija">
+        <a href="#solutions" class="nf-nav__item">Risinājumi</a>
+        <a href="#standards" class="nf-nav__item">Standarti</a>
+        <a href="#process" class="nf-nav__item">Process</a>
+        <a href="#brands" class="nf-nav__item">Zīmoli</a>
+        <a href="#contact" class="nf-nav__item">Kontakti</a>
+      </nav>
+
+      <div class="nf-nav__panel-foot">
+        <a class="btn" href="/">EN</a>
+        <a class="btn btn-primary" href="#contact">Pieteikt konsultāciju</a>
+      </div>
     </div>
-  </header>
+
+    <label for="nf-nav-toggle" class="nf-nav__backdrop" aria-label="Aizvērt izvēlni"></label>
+  </div>
+</header>
+
 
   <main id="main" class="nf-main">
     <!-- =========================
