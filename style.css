@@ -240,11 +240,12 @@ img{ max-width:100%; display:block; }
   border: 1px solid var(--border);
   border-radius: 18px;
   background: rgba(21,17,13,.92);
-  backdrop-filter: none;
   box-shadow: var(--shadow);
 
   padding: 12px;
   display:none;
+   /* ✅ CRITICAL: when hidden, it must not block clicks */
+  pointer-events: none;
   z-index: 60;
 }
 
@@ -299,7 +300,20 @@ img{ max-width:100%; display:block; }
   inset: 0;
   background: rgba(0,0,0,.45);
   display:none;
+
+  /* ✅ CRITICAL: when hidden, it must not block clicks */
+  pointer-events: none;
   z-index: 55;
+}
+
+/* When toggled ON -> show panel + backdrop */
+.nf-nav__toggle:checked ~ .nf-nav__panel{
+  display:block;
+  pointer-events: auto; /* ✅ only when open */
+}
+.nf-nav__toggle:checked ~ .nf-nav__backdrop{
+  display:block;
+  pointer-events: auto; /* ✅ only when open */
 }
 
 /* Toggle ON -> show panel + backdrop */
