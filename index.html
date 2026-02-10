@@ -4,11 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- ✅ NordFrame is the main company; TIMBRIC is a brand -->
   <title>NordFrame — Modular Timber Construction</title>
   <meta name="description" content="NordFrame is a modular timber construction company manufacturing prefabricated structures and branded products such as TIMBRIC®. Built in Latvia. Delivered across Europe." />
   <link rel="canonical" href="https://nordframe.timbric.lv/" />
- 
+
+  <!-- (Optional but recommended) hreflang -->
+  <link rel="alternate" hreflang="en" href="https://nordframe.timbric.lv/" />
+  <link rel="alternate" hreflang="lv" href="https://nordframe.timbric.lv/lv/" />
+  <link rel="alternate" hreflang="x-default" href="https://nordframe.timbric.lv/" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="NordFrame — Modular Timber Construction" />
@@ -17,36 +21,10 @@
   <!-- <meta property="og:image" content="https://nordframe.timbric.lv/img/og-nordframe.jpg" /> -->
 
   <!-- Favicons -->
-  <link rel="icon" href="/img/favicon.ico" />
+  <link rel="icon" href="/img/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/img/Nordframe_favikon.svg" />
 
-<!--  <style>
-    /* Minimal skeleton; replace with your real CSS */
-   :root { --radius: 14px; }
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
-    a{color:inherit}
-    .container{max-width:1120px;margin:0 auto;padding:0 20px}
-    .sr-only{position:absolute;left:-9999px}
-    .btn{display:inline-block;padding:12px 16px;border-radius:var(--radius);text-decoration:none;border:1px solid #0000}
-    .btn-primary{border-color:#111;background:#111;color:#fff}
-    .btn-ghost{border-color:#bbb;background:#fff}
-    .grid{display:grid;gap:20px}
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
-    .card{border:1px solid #e7e7e7;border-radius:var(--radius);padding:18px}
-    .section{padding:64px 0}
-    .section-header{margin-bottom:22px}
-    .kicker{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
-    h1{font-size:44px;line-height:1.1;margin:10px 0 14px}
-    h2{font-size:28px;line-height:1.2;margin:0 0 10px}
-    h3{font-size:18px;margin:0 0 8px}
-    p{margin:0 0 12px}
-    ul{margin:0;padding-left:18px}
-    .muted{opacity:.75}
-  </style> -->
-
-  <!-- ✅ Structured data: NordFrame as Organization, TIMBRIC as Brand -->
+  <!-- Structured data: NordFrame as Organization, TIMBRIC as Brand -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -59,6 +37,7 @@
     "sameAs":[]
   }
   </script>
+
   <link rel="stylesheet" href="/style.css" />
 </head>
 
@@ -66,77 +45,69 @@
   <a class="sr-only" href="#main">Skip to content</a>
 
   <!-- =========================
-       Header / Navigation
+       Header / Navigation (Desktop + Mobile)
   ========================== -->
- 
-  <!LOGO-->
   <header class="nf-header" id="top">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px;">
+    <div class="container nf-header__inner">
+      <!-- Brand -->
+      <a class="nf-brand" href="/" aria-label="NordFrame home">
+        <img src="/img/nordframe-logo.svg" alt="NordFrame" class="nf-logo" />
+      </a>
 
-   <!MOBILE APP-->
-      <header class="nf-header" id="top">
-  <div class="container nf-header__inner">
-    <!-- Brand -->
-    <a class="nf-brand" href="/" aria-label="NordFrame home">
-      <img src="/img/nordframe-logo.svg" alt="NordFrame" class="nf-logo" />
-    </a>
+      <!-- Mobile toggle (CSS-only) -->
+      <input type="checkbox" id="nf-nav-toggle" class="nf-nav__toggle" aria-label="Open menu" />
 
-    <!-- Mobile toggle (CSS-only) -->
-    <input type="checkbox" id="nf-nav-toggle" class="nf-nav__toggle" aria-label="Open menu" />
-
-    <!-- Desktop nav -->
-    <nav class="nf-nav nf-nav--desktop" aria-label="Main navigation">
-      <ul>
-        <li><a href="#solutions">Solutions</a></li>
-        <li><a href="#standards">Standards</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#brands">Brands</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- Desktop language button -->
-    <a class="btn nf-lang nf-lang--desktop" href="/lv/" aria-label="Switch to Latvian">LV</a>
-
-    <!-- Burger button (label toggles checkbox) -->
-    <label for="nf-nav-toggle" class="nf-burger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </label>
-
-    <!-- Mobile panel -->
-    <div class="nf-nav__panel" role="dialog" aria-label="Mobile menu">
-      <div class="nf-nav__panel-head">
-        <span class="muted">Menu</span>
-        <label for="nf-nav-toggle" class="nf-nav__close" aria-label="Close menu">✕</label>
-      </div>
-
-      <nav class="nf-nav nf-nav--mobile" aria-label="Mobile navigation">
-        <a href="#solutions" class="nf-nav__item">Solutions</a>
-        <a href="#standards" class="nf-nav__item">Standards</a>
-        <a href="#process" class="nf-nav__item">Process</a>
-        <a href="#brands" class="nf-nav__item">Brands</a>
-        <a href="#contact" class="nf-nav__item">Contact</a>
+      <!-- Desktop nav -->
+      <nav class="nf-nav nf-nav--desktop" aria-label="Main navigation">
+        <ul>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#standards">Standards</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#brands">Brands</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
 
-      <div class="nf-nav__panel-foot">
-        <a class="btn" href="/lv/">LV</a>
-        <a class="btn btn-primary" href="#contact">Request consultation</a>
-      </div>
-    </div>
+      <!-- Desktop language button -->
+      <a class="btn nf-lang nf-lang--desktop" href="/lv/" aria-label="Switch to Latvian">LV</a>
 
-    <!-- Backdrop (click to close) -->
-    <label for="nf-nav-toggle" class="nf-nav__backdrop" aria-label="Close menu backdrop"></label>
-  </div>
-</header>
+      <!-- Burger button -->
+      <label for="nf-nav-toggle" class="nf-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <!-- Mobile panel -->
+      <div class="nf-nav__panel" role="dialog" aria-label="Mobile menu">
+        <div class="nf-nav__panel-head">
+          <span class="muted">Menu</span>
+          <label for="nf-nav-toggle" class="nf-nav__close" aria-label="Close menu">✕</label>
+        </div>
+
+        <nav class="nf-nav nf-nav--mobile" aria-label="Mobile navigation">
+          <a href="#solutions" class="nf-nav__item">Solutions</a>
+          <a href="#standards" class="nf-nav__item">Standards</a>
+          <a href="#process" class="nf-nav__item">Process</a>
+          <a href="#brands" class="nf-nav__item">Brands</a>
+          <a href="#contact" class="nf-nav__item">Contact</a>
+        </nav>
+
+        <div class="nf-nav__panel-foot">
+          <a class="btn" href="/lv/">LV</a>
+          <a class="btn btn-primary" href="#contact">Request consultation</a>
+        </div>
+      </div>
+
+      <!-- Backdrop (click to close) -->
+      <label for="nf-nav-toggle" class="nf-nav__backdrop" aria-label="Close menu backdrop"></label>
     </div>
   </header>
 
   <main id="main" class="nf-main">
     <!-- =========================
-         Hero (H1) — NordFrame only
+         Hero (H1)
     ========================== -->
-    <section class="nf-hero section" id="home" style="padding-top:46px;">
-      <div class="container grid grid-2" style="align-items:center;">
+    <section class="nf-hero section" id="home">
+      <div class="container grid grid-2">
         <div class="nf-hero__content">
           <p class="kicker nf-hero__kicker">Built in Latvia • Delivered across Europe</p>
           <h1 class="nf-hero__title">Modular Timber Construction for Nordic-Grade Projects</h1>
@@ -145,12 +116,12 @@
             developers, architects, and construction partners.
           </p>
 
-          <div class="nf-hero__actions" style="display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 10px;">
+          <div class="nf-hero__actions">
             <a class="btn btn-primary nf-btn nf-btn--primary" href="#contact">Get a Quote</a>
-            <a class="btn btn-ghost nf-btn nf-btn--ghost" href="#solutions">View Solutions</a>
+            <a class="btn nf-btn nf-btn--ghost" href="#solutions">View Solutions</a>
           </div>
 
-          <ul class="nf-hero__trust muted" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;padding-left:18px;">
+          <ul class="nf-hero__trust muted">
             <li>C24 structural timber</li>
             <li>CNC precision</li>
             <li>Transport-optimized modules</li>
@@ -158,9 +129,7 @@
         </div>
 
         <div class="nf-hero__media" aria-hidden="true">
-          <!-- Put hero image/video here -->
-          <!-- <img class="nf-hero__image" src="/img/hero.jpg" alt="" /> -->
-          <div class="card" style="height:260px;display:flex;align-items:center;justify-content:center;">
+          <div class="card">
             <span class="muted">Hero media placeholder</span>
           </div>
         </div>
@@ -168,7 +137,7 @@
     </section>
 
     <!-- =========================
-         About (H2 + H3)
+         About
     ========================== -->
     <section class="nf-about section" id="about">
       <div class="container">
@@ -199,7 +168,7 @@
     </section>
 
     <!-- =========================
-         Solutions (H2 + H3 list)
+         Solutions
     ========================== -->
     <section class="nf-solutions section" id="solutions">
       <div class="container">
@@ -233,7 +202,7 @@
     </section>
 
     <!-- =========================
-         Standards (H2 + H3)
+         Standards
     ========================== -->
     <section class="nf-standards section" id="standards">
       <div class="container">
@@ -260,7 +229,7 @@
     </section>
 
     <!-- =========================
-         Process (H2 + H3 steps)
+         Process
     ========================== -->
     <section class="nf-process section" id="process">
       <div class="container">
@@ -269,7 +238,7 @@
           <p class="muted">A clear workflow that reduces on-site time and delivery risk.</p>
         </header>
 
-        <ol class="nf-steps" style="margin:0;padding-left:18px;display:grid;gap:14px;">
+        <ol class="nf-steps">
           <li class="card nf-step">
             <h3 class="nf-step__title">1) Requirements & drawings</h3>
             <p class="nf-step__text muted">Align specs, drawings, and delivery format (flat-pack / assembled).</p>
@@ -291,7 +260,7 @@
     </section>
 
     <!-- =========================
-         Brands (H2 + H3) — TIMBRIC as brand under NordFrame
+         Brands
     ========================== -->
     <section class="nf-brands section" id="brands">
       <div class="container">
@@ -306,10 +275,10 @@
             <p class="nf-brand-card__text muted">
               Premium modular saunas and timber structures. Designed for export and fast installation.
             </p>
-            <p class="muted" style="margin-bottom:14px;">
+            <p class="muted">
               Explore products, visuals, and inquiries on the TIMBRIC website.
             </p>
-            <a class="btn btn-ghost nf-brand-card__link" href="https://timbric.lv/" rel="noopener">Visit TIMBRIC →</a>
+            <a class="btn nf-brand-card__link" href="https://timbric.lv/" rel="noopener">Visit TIMBRIC →</a>
           </article>
 
           <article class="card nf-brand-card">
@@ -328,7 +297,7 @@
     </section>
 
     <!-- =========================
-         Contact (H2 + H3)
+         Contact
     ========================== -->
     <section class="nf-contact section" id="contact">
       <div class="container">
@@ -338,38 +307,37 @@
         </header>
 
         <div class="grid grid-2">
-          <!-- Contact form -->
+          <!-- NOTE: Form handler left as you had it; we can switch to Netlify forms later -->
           <form class="card nf-form" method="post" action="/forms/lead">
             <h3 class="nf-form__title">Request Consultation</h3>
 
-            <label class="nf-field" style="display:block;margin:10px 0;">
-              <span class="nf-field__label" style="display:block;margin-bottom:6px;">Name</span>
-              <input class="nf-field__input" type="text" name="name" autocomplete="name" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;" />
+            <label class="nf-field">
+              <span class="nf-field__label">Name</span>
+              <input class="nf-field__input" type="text" name="name" autocomplete="name" required />
             </label>
 
-            <label class="nf-field" style="display:block;margin:10px 0;">
-              <span class="nf-field__label" style="display:block;margin-bottom:6px;">Email</span>
-              <input class="nf-field__input" type="email" name="email" autocomplete="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;" />
+            <label class="nf-field">
+              <span class="nf-field__label">Email</span>
+              <input class="nf-field__input" type="email" name="email" autocomplete="email" required />
             </label>
 
-            <label class="nf-field" style="display:block;margin:10px 0;">
-              <span class="nf-field__label" style="display:block;margin-bottom:6px;">Company (optional)</span>
-              <input class="nf-field__input" type="text" name="company" autocomplete="organization" style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;" />
+            <label class="nf-field">
+              <span class="nf-field__label">Company (optional)</span>
+              <input class="nf-field__input" type="text" name="company" autocomplete="organization" />
             </label>
 
-            <label class="nf-field" style="display:block;margin:10px 0;">
-              <span class="nf-field__label" style="display:block;margin-bottom:6px;">Project details</span>
-              <textarea class="nf-field__input nf-field__textarea" name="message" rows="6" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;"></textarea>
+            <label class="nf-field">
+              <span class="nf-field__label">Project details</span>
+              <textarea class="nf-field__input nf-field__textarea" name="message" rows="6" required></textarea>
             </label>
 
             <button class="btn btn-primary nf-btn nf-btn--primary" type="submit">Send Request</button>
 
-            <p class="nf-form__note muted" style="margin-top:10px;">
+            <p class="nf-form__note muted">
               By submitting, you agree we may contact you about this inquiry.
             </p>
           </form>
 
-          <!-- Contact details -->
           <aside class="card nf-contact__details" aria-label="Contact details">
             <h3 class="nf-contact__title">Business Details</h3>
 
@@ -380,12 +348,12 @@
               <li class="nf-contact__item"><strong>Exports:</strong> Scandinavia & Europe</li>
             </ul>
 
-            <div class="nf-contact__cta" style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-              <a class="btn btn-ghost" href="#brands">View Brands</a>
-              <a class="btn btn-ghost" href="https://timbric.lv/" rel="noopener">TIMBRIC website</a>
+            <div class="nf-contact__cta">
+              <a class="btn" href="#brands">View Brands</a>
+              <a class="btn" href="https://timbric.lv/" rel="noopener">TIMBRIC website</a>
             </div>
 
-            <p class="muted" style="margin-top:14px;">
+            <p class="muted">
               TIMBRIC® is a product brand developed and manufactured by NordFrame.
             </p>
           </aside>
@@ -395,16 +363,16 @@
   </main>
 
   <!-- =========================
-       Footer — NordFrame primary, TIMBRIC as brand
+       Footer
   ========================== -->
-  <footer class="nf-footer" style="border-top:1px solid #eee;padding:28px 0;">
-    <div class="container" style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;justify-content:space-between;">
+  <footer class="nf-footer">
+    <div class="container nf-footer__inner">
       <div class="nf-footer__brand">
-        <strong class="nf-footer__name" style="display:block;">NordFrame</strong>
+        <strong class="nf-footer__name">NordFrame</strong>
         <span class="nf-footer__tag muted">Modular Timber Construction</span>
       </div>
 
-      <nav class="nf-footer__nav" aria-label="Footer" style="display:flex;gap:14px;flex-wrap:wrap;">
+      <nav class="nf-footer__nav" aria-label="Footer">
         <a class="nf-footer__link" href="#top">Back to top</a>
         <a class="nf-footer__link" href="/privacy">Privacy</a>
         <a class="nf-footer__link" href="/terms">Terms</a>
@@ -422,3 +390,4 @@
   </footer>
 </body>
 </html>
+
