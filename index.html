@@ -47,60 +47,68 @@
   <!-- =========================
        Header / Navigation (Desktop + Mobile)
   ========================== -->
-  <header class="nf-header" id="top">
-    <div class="container nf-header__inner">
-      <!-- Brand -->
-      <a class="nf-brand" href="/" aria-label="NordFrame home">
-        <img src="/img/Nordframe_logo_W.svg" alt="NordFrame" class="nf-logo" />
-      </a>
+<header class="nf-header" id="top">
+  <div class="container nf-header__inner">
 
-      <!-- Mobile toggle (CSS-only) -->
-      <input type="checkbox" id="nf-nav-toggle" class="nf-nav__toggle" aria-label="Open menu" />
+    <!-- Brand -->
+    <a class="nf-brand" href="/" aria-label="NordFrame home">
+      <img src="/img/nordframe-logo.svg" alt="NordFrame" class="nf-logo" />
+    </a>
 
-      <!-- Desktop nav -->
-      <nav class="nf-nav nf-nav--desktop" aria-label="Main navigation">
-        <ul>
-          <li><a href="#solutions">Solutions</a></li>
-          <li><a href="#standards">Standards</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#brands">Brands</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <!-- Language switch (TEXT, like screenshot) -->
+    <a class="nf-langlink" href="/lv/" aria-label="Switch to Latvian">LV</a>
 
-      <!-- Desktop language button -->
-      <a class="btn nf-lang nf-lang--desktop" href="/lv/" aria-label="Switch to Latvian">LV</a>
+    <!-- Mobile toggle (CSS-only) -->
+    <input type="checkbox" id="nf-nav-toggle" class="nf-nav__toggle" aria-label="Open menu" />
 
-      <!-- Burger button -->
-      <label for="nf-nav-toggle" class="nf-burger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </label>
+    <!-- Desktop navigation -->
+    <nav class="nf-nav nf-nav--desktop" aria-label="Main navigation">
+      <ul>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#standards">Standards</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-      <!-- Mobile panel -->
-      <div class="nf-nav__panel" role="dialog" aria-label="Mobile menu">
-        <div class="nf-nav__panel-head">
-          <span class="muted">Menu</span>
-          <label for="nf-nav-toggle" class="nf-nav__close" aria-label="Close menu">✕</label>
-        </div>
+    <!-- Desktop CTA (stays right) -->
+    <a class="btn btn-primary nf-cta" href="#contact">
+      Request consultation
+    </a>
 
-        <nav class="nf-nav nf-nav--mobile" aria-label="Mobile navigation">
-          <a href="#solutions" class="nf-nav__item">Solutions</a>
-          <a href="#standards" class="nf-nav__item">Standards</a>
-          <a href="#process" class="nf-nav__item">Process</a>
-          <a href="#brands" class="nf-nav__item">Brands</a>
-          <a href="#contact" class="nf-nav__item">Contact</a>
-        </nav>
+    <!-- Burger (mobile) -->
+    <label for="nf-nav-toggle" class="nf-burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </label>
 
-        <div class="nf-nav__panel-foot">
-          <a class="btn" href="/lv/">LV</a>
-          <a class="btn btn-primary" href="#contact">Request consultation</a>
-        </div>
+    <!-- Mobile panel -->
+    <div class="nf-nav__panel" role="dialog" aria-label="Mobile menu">
+      <div class="nf-nav__panel-head">
+        <span class="muted">Menu</span>
+        <label for="nf-nav-toggle" class="nf-nav__close" aria-label="Close menu">✕</label>
       </div>
 
-      <!-- Backdrop (click to close) -->
-      <label for="nf-nav-toggle" class="nf-nav__backdrop" aria-label="Close menu backdrop"></label>
+      <nav class="nf-nav nf-nav--mobile" aria-label="Mobile navigation">
+        <a href="#solutions" class="nf-nav__item">Solutions</a>
+        <a href="#standards" class="nf-nav__item">Standards</a>
+        <a href="#process" class="nf-nav__item">Process</a>
+        <a href="#brands" class="nf-nav__item">Brands</a>
+        <a href="#contact" class="nf-nav__item">Contact</a>
+      </nav>
+
+      <div class="nf-nav__panel-foot">
+        <a class="btn" href="/lv/">LV</a>
+        <a class="btn btn-primary" href="#contact">Request consultation</a>
+      </div>
     </div>
-  </header>
+
+    <!-- Backdrop -->
+    <label for="nf-nav-toggle" class="nf-nav__backdrop" aria-label="Close menu backdrop"></label>
+
+  </div>
+</header>
+
 
   <main id="main" class="nf-main">
     <!-- =========================
