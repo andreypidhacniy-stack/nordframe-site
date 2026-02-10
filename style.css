@@ -163,8 +163,9 @@ img{ max-width:100%; display:block; }
   background: rgba(255,255,255,.04);
 }
 
-/*HERO*/
-/* --- Hero layout --- */
+* ============================
+   Hero (FINAL, CLEAN)
+   ============================ */
 
 .nf-hero{
   position: relative;
@@ -174,10 +175,11 @@ img{ max-width:100%; display:block; }
   overflow: hidden;
 }
 
-/* Hero image */
+/* Background image layer */
 .nf-hero__bg{
   position: absolute;
   inset: 0;
+  z-index: 0;
   background:
     linear-gradient(
       90deg,
@@ -187,41 +189,28 @@ img{ max-width:100%; display:block; }
       rgba(35,28,20,.20) 100%
     ),
     url("/img/hero-timber-frame.jpg") center / cover no-repeat;
-  z-index: 0;
-}
-   
-   
-   .nf-hero{
-  padding-top: 28px;
-  padding-bottom: 72px;
 }
 
-.nf-hero__wrap{
-  display:grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap: 18px;
-  align-items: stretch;
+/* Content above image */
+.nf-hero__content{
+  position: relative;
+  z-index: 1;
 }
 
-/* Clean panel like your “Requirements & drawings” feel */
+/* Clean readable panel */
 .nf-hero__panel{
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(35,28,20,.72);   /* clean readable surface */
+  max-width: 640px;
+  background: rgba(35,28,20,.72);
+  border: 1px solid rgba(255,255,255,.12);
   border-radius: 22px;
   padding: 42px 36px;
-  box-shadow: 0 10px 26px rgba(0,0,0,.25);
-}
-
-/* Title/subtitle */
-.nf-hero__title{
-  margin-top: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
 }
 
 .nf-hero__subtitle{
   max-width: 60ch;
 }
 
-/* CTA row */
 .nf-hero__actions{
   display:flex;
   gap: 12px;
@@ -229,14 +218,13 @@ img{ max-width:100%; display:block; }
   margin: 18px 0 10px;
 }
 
-/* Chips */
 .nf-hero__chips{
-  list-style: none;
-  padding: 0;
+  list-style:none;
+  padding:0;
   margin: 14px 0 0;
   display:flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap:10px;
+  flex-wrap:wrap;
 }
 .nf-hero__chips li{
   font-size: 13px;
@@ -247,33 +235,18 @@ img{ max-width:100%; display:block; }
   background: rgba(255,255,255,.04);
 }
 
-/* Media card */
-.nf-hero__media{
-  border-radius: 22px;
-}
-.nf-hero__mediaInner{
-  height: 100%;
-  min-height: 320px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding: 18px;
-}
-
 /* Mobile */
 @media (max-width: 920px){
-  .nf-hero__wrap{
-    grid-template-columns: 1fr;
+  .nf-hero{
+    min-height: auto;
+    padding: 80px 0 64px;
   }
   .nf-hero__panel{
-    padding: 32px 18px;
+    max-width: 100%;
+    padding: 28px 18px;
   }
-  .nf-hero__mediaInner{
-    min-height: 220px;
-  }
-}
-
+} 
+   
 /* push nav right */
 .nf-nav--desktop{ margin-left: auto; }
 ------------------------------------------------------------------------------------------------
