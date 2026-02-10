@@ -123,7 +123,7 @@ img{ max-width:100%; display:block; }
 
 /* Brand */
 .nf-brand{ text-decoration:none; display:flex; align-items:center; }
-.nf-logo{ height: 44px; width:auto; display:block; } /* FIX: was 84 */
+.nf-logo{ height: 84px; width:auto; display:block; } /* FIX: was 84 */
 
 /* Lang link */
 .nf-langlink{
