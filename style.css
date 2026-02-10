@@ -1,20 +1,24 @@
 /* ============================
-   NordFrame (nf-) Premium CSS
-   Works with the v2 HTML structure
+   NordFrame (nf-) Premium CSS v3
+   - wood palette background
+   - clean header layout (desktop like screenshot)
+   - mobile menu (CSS-only)
+   - CTA not massive on mobile (hidden in header, kept in menu)
    ============================ */
 
 :root{
-  --bg: #0b0c0f;
+  /* Wood / warm premium palette */
+  --bg: #15110d;
   --surface: rgba(255,255,255,.06);
   --surface-2: rgba(255,255,255,.09);
   --text: rgba(255,255,255,.92);
   --muted: rgba(255,255,255,.72);
   --muted-2: rgba(255,255,255,.56);
-  --border: rgba(255,255,255,.12);
+  --border: rgba(255,255,255,.14);
 
   --brand: #ffffff;
-  --accent: #d9c7a3; /* wood-ish warm highlight */
-  --accent-2: #a7b6ad; /* cool nordic grey */
+  --accent: #d6b98b;      /* warm wood highlight */
+  --accent-2: #b9a48a;    /* warm grey */
 
   --radius: 18px;
   --radius-sm: 14px;
@@ -31,6 +35,7 @@
   --p: 16px;
 }
 
+/* Base */
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body.nf{
@@ -38,15 +43,15 @@ body.nf{
   font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   line-height: 1.6;
   background:
-    radial-gradient(900px 600px at 20% 10%, rgba(217,199,163,.18), transparent 55%),
-    radial-gradient(900px 600px at 80% 0%, rgba(167,182,173,.18), transparent 55%),
-    radial-gradient(1200px 800px at 50% 100%, rgba(255,255,255,.06), transparent 55%),
+    radial-gradient(900px 600px at 18% 10%, rgba(214,185,139,.16), transparent 58%),
+    radial-gradient(900px 600px at 82% 0%, rgba(185,164,138,.12), transparent 58%),
+    radial-gradient(1200px 800px at 50% 110%, rgba(255,255,255,.05), transparent 62%),
     var(--bg);
   color: var(--text);
 }
 
 a{ color:inherit; }
-a:hover{ opacity:.95; }
+a:hover{ opacity:.98; }
 img{ max-width:100%; display:block; }
 
 .container{
@@ -80,49 +85,44 @@ img{ max-width:100%; display:block; }
 }
 
 /* ============================
-   Header
+   Header (desktop like screenshot)
    ============================ */
 .nf-header{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(11,12,15,.70);
+  background: rgba(21,17,13,.70);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
-.nf-header .container{
+.nf-header__inner{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap: 18px;
-  padding: 14px var(--pad);
+  gap: 14px;
+  padding: 12px 0;
 }
-/* ============================
-   NordFrame Logo
-   ============================ */
-.nf-logo{
-  height:84px;
-  width: auto;
-  display: block;
-}
-.nf-brand{
+
+/* Brand */
+.nf-brand{ text-decoration:none; display:flex; align-items:center; }
+.nf-logo{ height: 44px; width:auto; display:block; }
+
+/* Language link (small text near logo) */
+.nf-langlink{
   text-decoration:none;
-  display:flex;
-  flex-direction:column;
-  gap: 2px;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+.nf-langlink:hover{
+  color: var(--text);
+  border-color: var(--border);
+  background: rgba(255,255,255,.05);
 }
 
-.nf-brand strong{
-  font-size: 16px;
-  letter-spacing: .03em;
-}
-
-.nf-brand span{
-  font-size: 12px;
-  color: var(--muted-2);
-}
-
+/* Desktop nav */
 .nf-nav ul{
   list-style:none;
   display:flex;
@@ -131,7 +131,6 @@ img{ max-width:100%; display:block; }
   padding:0;
   flex-wrap: wrap;
 }
-
 .nf-nav a{
   text-decoration:none;
   color: var(--muted);
@@ -140,45 +139,73 @@ img{ max-width:100%; display:block; }
   border-radius: 12px;
   border: 1px solid transparent;
 }
-
 .nf-nav a:hover{
   color: var(--text);
   border-color: var(--border);
   background: rgba(255,255,255,.04);
 }
-/* ============================
-   Mobile header + nav (CSS-only)
-   ============================ */
 
-.nf-header__inner{
-  display:flex;
+/* Push nav to the right, keep CTA far right */
+.nf-nav--desktop{ margin-left: auto; }
+
+/* ============================
+   Buttons
+   ============================ */
+.btn{
+  display:inline-flex;
   align-items:center;
-  justify-content:space-between;
-  gap: 14px;
+  justify-content:center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration:none;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  box-shadow: none;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.18);
+}
+.btn-primary{
+  background: linear-gradient(135deg, rgba(214,185,139,.22), rgba(255,255,255,.06));
+  border-color: rgba(214,185,139,.35);
+}
+.btn-primary:hover{
+  background: linear-gradient(135deg, rgba(214,185,139,.28), rgba(255,255,255,.08));
 }
 
-/* Toggle input hidden but still works */
+/* Desktop CTA tuning */
+.nf-cta{
+  white-space: nowrap;
+  padding: 9px 14px; /* slightly slimmer */
+}
+
+/* ============================
+   Mobile nav (CSS-only)
+   ============================ */
+
+/* Toggle input hidden but functional */
 .nf-nav__toggle{
   position:absolute;
   opacity:0;
   pointer-events:none;
 }
 
-/* Desktop nav shown by default */
-.nf-nav--desktop{ display:block; }
-.nf-lang--desktop{ display:inline-flex; }
-
-/* Burger hidden by default (desktop) */
+/* Burger (shown on mobile only) */
 .nf-burger{
   display:none;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 14px;
   border: 1px solid var(--border);
   background: rgba(255,255,255,.04);
   align-items:center;
   justify-content:center;
-  gap: 6px;
+  gap: 5px;
   cursor:pointer;
 }
 .nf-burger span{
@@ -192,19 +219,19 @@ img{ max-width:100%; display:block; }
 /* Mobile panel hidden by default */
 .nf-nav__panel{
   position: fixed;
-  top: 70px; /* below sticky header */
+  top: 72px;
   right: 12px;
   left: 12px;
   max-width: 520px;
   margin-left:auto;
 
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: rgba(11,12,15,.92);
+  border-radius: 18px;
+  background: rgba(21,17,13,.92);
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow);
 
-  padding: 14px;
+  padding: 12px;
   display:none;
   z-index: 60;
 }
@@ -237,14 +264,14 @@ img{ max-width:100%; display:block; }
 .nf-nav__item{
   text-decoration:none;
   color: var(--text);
-  padding: 12px 12px;
+  padding: 11px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.04);
 }
 .nf-nav__item:hover{
   background: rgba(255,255,255,.07);
-  border-color: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.18);
 }
 
 .nf-nav__panel-foot{
@@ -263,55 +290,27 @@ img{ max-width:100%; display:block; }
   z-index: 55;
 }
 
-/* When toggled ON -> show panel + backdrop */
-.nf-nav__toggle:checked ~ .nf-nav__panel{
-  display:block;
-}
-.nf-nav__toggle:checked ~ .nf-nav__backdrop{
-  display:block;
-}
+/* Toggle ON -> show panel + backdrop */
+.nf-nav__toggle:checked ~ .nf-nav__panel{ display:block; }
+.nf-nav__toggle:checked ~ .nf-nav__backdrop{ display:block; }
 
 /* Mobile breakpoint */
 @media (max-width: 920px){
   .nf-nav--desktop{ display:none; }
-  .nf-lang--desktop{ display:none; }
   .nf-burger{ display:inline-flex; }
+
+  /* Key: CTA NOT in header on mobile (massive issue fixed) */
+  .nf-cta{ display:none; }
+
+  /* Make header slightly tighter */
+  .nf-logo{ height: 38px; }
+  .nf-langlink{ padding: 6px 8px; font-size: 13px; }
 }
 
-/* Optional: close menu after clicking anchor (best with JS, but this helps focus) */
-.nf-nav__item:focus{ outline: none; box-shadow: 0 0 0 6px rgba(217,199,163,.12); }
-
-/* ============================
-   Buttons
-   ============================ */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap: 8px;
-  padding: 11px 14px;
-  border-radius: 999px;
-  text-decoration:none;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.04);
-  color: var(--text);
-  box-shadow: none;
-  transition: transform .12s ease, background .12s ease, border-color .12s ease;
-}
-
-.btn:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,.07);
-  border-color: rgba(255,255,255,.18);
-}
-
-.btn-primary{
-  background: linear-gradient(135deg, rgba(217,199,163,.24), rgba(255,255,255,.06));
-  border-color: rgba(217,199,163,.35);
-}
-
-.btn-primary:hover{
-  background: linear-gradient(135deg, rgba(217,199,163,.30), rgba(255,255,255,.08));
+/* Optional focus style */
+.nf-nav__item:focus{
+  outline: none;
+  box-shadow: 0 0 0 6px rgba(214,185,139,.12);
 }
 
 /* ============================
@@ -328,17 +327,9 @@ p{ font-size: var(--p); margin: 0 0 12px; }
 /* ============================
    Hero
    ============================ */
-.nf-hero{
-  padding-top: 44px;
-}
-
-.nf-hero__content{
-  padding: 18px 0;
-}
-
-.nf-hero__subtitle{
-  max-width: 56ch;
-}
+.nf-hero{ padding-top: 44px; }
+.nf-hero__content{ padding: 18px 0; }
+.nf-hero__subtitle{ max-width: 56ch; }
 
 .nf-hero__actions{
   display:flex;
@@ -356,10 +347,6 @@ p{ font-size: var(--p); margin: 0 0 12px; }
   color: var(--muted-2);
 }
 
-.nf-hero__media .card{
-  border-radius: var(--radius);
-}
-
 /* ============================
    Cards
    ============================ */
@@ -370,10 +357,7 @@ p{ font-size: var(--p); margin: 0 0 12px; }
   padding: 18px;
   box-shadow: var(--shadow-soft);
 }
-
-.card:hover{
-  border-color: rgba(217,199,163,.22);
-}
+.card:hover{ border-color: rgba(214,185,139,.22); }
 
 .nf-card__text,
 .nf-solution__text,
@@ -392,11 +376,7 @@ p{ font-size: var(--p); margin: 0 0 12px; }
   display:grid;
   gap: 14px;
 }
-
-.nf-step{
-  position: relative;
-}
-
+.nf-step{ position: relative; }
 .nf-step::before{
   content: "";
   position:absolute;
@@ -406,29 +386,24 @@ p{ font-size: var(--p); margin: 0 0 12px; }
   height: 10px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 6px rgba(217,199,163,.12);
+  box-shadow: 0 0 0 6px rgba(214,185,139,.12);
 }
+.nf-step > *{ padding-left: 18px; }
 
-/* add a little left padding for step content */
-.nf-step > *{
-  padding-left: 18px;
-}
-
-/* ============================
-   Lists inside cards
-   ============================ */
+/* Lists inside cards */
 .card ul{
   margin: 0;
   padding-left: 18px;
   color: var(--muted);
 }
-
 .card li{ margin: 6px 0; }
 
 /* ============================
    Form
    ============================ */
 .nf-form h3{ margin-bottom: 10px; }
+
+.nf-field{ display:block; margin: 10px 0; }
 
 .nf-field__label{
   display:block;
@@ -447,11 +422,10 @@ p{ font-size: var(--p); margin: 0 0 12px; }
   color: var(--text);
   outline: none;
 }
-
 .nf-field__input:focus,
 .nf-field__textarea:focus{
-  border-color: rgba(217,199,163,.55);
-  box-shadow: 0 0 0 6px rgba(217,199,163,.12);
+  border-color: rgba(214,185,139,.55);
+  box-shadow: 0 0 0 6px rgba(214,185,139,.12);
 }
 
 .nf-form__note{
@@ -465,7 +439,15 @@ p{ font-size: var(--p); margin: 0 0 12px; }
 .nf-footer{
   border-top: 1px solid var(--border);
   padding: 28px 0;
-  background: rgba(0,0,0,.16);
+  background: rgba(0,0,0,.14);
+}
+
+.nf-footer__inner{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .nf-footer__nav a{
@@ -479,14 +461,4 @@ p{ font-size: var(--p); margin: 0 0 12px; }
   color: var(--text);
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.10);
-}
-
-/* ============================
-   Small screens tweaks
-   ============================ */
-@media (max-width: 600px){
-  .nf-header .container{ align-items:flex-start; }
-  .nf-nav ul{ gap: 8px; }
-  .btn{ width: 100%; }
-  .nf-hero__actions .btn{ width: auto; }
 }
