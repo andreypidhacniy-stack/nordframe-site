@@ -39,16 +39,32 @@
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body.nf{
-  margin:0;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height: 1.6;
   background:
-    radial-gradient(900px 600px at 18% 10%, rgba(214,185,139,.16), transparent 58%),
-    radial-gradient(900px 600px at 82% 0%, rgba(185,164,138,.12), transparent 58%),
-    radial-gradient(1200px 800px at 50% 110%, rgba(255,255,255,.05), transparent 62%),
-    var(--bg);
-  color: var(--text);
+    /* wood plank vertical rhythm */
+    repeating-linear-gradient(
+      90deg,
+      rgba(90,65,42,.22) 0px,
+      rgba(90,65,42,.22) 80px,
+      rgba(110,80,55,.28) 80px,
+      rgba(110,80,55,.28) 82px
+    ),
+
+    /* soft light from top */
+    radial-gradient(
+      1000px 600px at 50% -10%,
+      rgba(214,185,139,.20),
+      transparent 60%
+    ),
+
+    /* base wood tone */
+    linear-gradient(
+      180deg,
+      #1a140f 0%,
+      #15110d 40%,
+      #120f0b 100%
+    );
 }
+
 
 a{ color:inherit; }
 a:hover{ opacity:.98; }
