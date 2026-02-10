@@ -342,7 +342,7 @@ img{ max-width:100%; display:block; }
   position:absolute;
   inset: 0;
   background: rgba(20,16,12,.85); /* silts, bet tīrs */
-  backdrop-filter: blur(2px);
+  backdrop-filter: none;
   z-index: 0;
 }
 
