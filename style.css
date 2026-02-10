@@ -290,7 +290,7 @@ img{ max-width:100%; display:block; }
 }
 
 .btn-primary.nf-cta:hover{
-  background: linear-gradient(135deg, rgba(214,185,139,.46), rgba(255,255,255,.10));
+  background: linear-gradient(135deg, rgba(245, 127, 39, 0.43), rgba(255,255,255,.10));
    }
 /* ============================
    Mobile nav (CSS-only) - SAFE (no click blocking when closed)
