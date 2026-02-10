@@ -117,7 +117,7 @@ img{ max-width:100%; display:block; }
 
 /* Brand */
 .nf-brand{ text-decoration:none; display:flex; align-items:center; }
-.nf-logo{ height: 44px; width:auto; display:block; }
+.nf-logo{ height: 84px; width:auto; display:block; }
 
 /* Language link (small text near logo) */
 .nf-langlink{
