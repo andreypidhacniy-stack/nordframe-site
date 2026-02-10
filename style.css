@@ -274,6 +274,7 @@ img{ max-width:100%; display:block; }
 .btn-primary{
   background: linear-gradient(135deg, rgba(214,185,139,.22), rgba(255,255,255,.06));
   border-color: rgba(214,185,139,.35);
+   border-radius: 999px;
 }
 .btn-primary:hover{
   background: linear-gradient(135deg, rgba(214,185,139,.28), rgba(255,255,255,.08));
