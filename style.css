@@ -348,8 +348,8 @@ img{ max-width:100%; display:block; }
 
 /* Saturs virs virskārtas */
 .section > .container{
-  position: relative;
-  z-index: 1;
+  background: rgba(20,16,12,.88);
+  border-radius: 22px;
 }
 
 
