@@ -146,6 +146,140 @@ img{ max-width:100%; display:block; }
   border-color: var(--border);
   background: rgba(255,255,255,.04);
 }
+/* ============================
+   Mobile header + nav (CSS-only)
+   ============================ */
+
+.nf-header__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+}
+
+/* Toggle input hidden but still works */
+.nf-nav__toggle{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+/* Desktop nav shown by default */
+.nf-nav--desktop{ display:block; }
+.nf-lang--desktop{ display:inline-flex; }
+
+/* Burger hidden by default (desktop) */
+.nf-burger{
+  display:none;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  align-items:center;
+  justify-content:center;
+  gap: 6px;
+  cursor:pointer;
+}
+.nf-burger span{
+  display:block;
+  width: 18px;
+  height: 2px;
+  background: rgba(255,255,255,.82);
+  border-radius: 2px;
+}
+
+/* Mobile panel hidden by default */
+.nf-nav__panel{
+  position: fixed;
+  top: 70px; /* below sticky header */
+  right: 12px;
+  left: 12px;
+  max-width: 520px;
+  margin-left:auto;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(11,12,15,.92);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+
+  padding: 14px;
+  display:none;
+  z-index: 60;
+}
+
+.nf-nav__panel-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom: 10px;
+}
+
+.nf-nav__close{
+  cursor:pointer;
+  width: 36px;
+  height: 36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+}
+
+.nf-nav--mobile{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.nf-nav__item{
+  text-decoration:none;
+  color: var(--text);
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+}
+.nf-nav__item:hover{
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.16);
+}
+
+.nf-nav__panel-foot{
+  display:flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* Backdrop */
+.nf-nav__backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display:none;
+  z-index: 55;
+}
+
+/* When toggled ON -> show panel + backdrop */
+.nf-nav__toggle:checked ~ .nf-nav__panel{
+  display:block;
+}
+.nf-nav__toggle:checked ~ .nf-nav__backdrop{
+  display:block;
+}
+
+/* Mobile breakpoint */
+@media (max-width: 920px){
+  .nf-nav--desktop{ display:none; }
+  .nf-lang--desktop{ display:none; }
+  .nf-burger{ display:inline-flex; }
+}
+
+/* Optional: close menu after clicking anchor (best with JS, but this helps focus) */
+.nf-nav__item:focus{ outline: none; box-shadow: 0 0 0 6px rgba(217,199,163,.12); }
 
 /* ============================
    Buttons
