@@ -1,14 +1,14 @@
 /* ============================
-   NordFrame (nf-) Premium CSS v3
-   - wood palette background
-   - clean header layout (desktop like screenshot)
-   - mobile menu (CSS-only)
-   - CTA not massive on mobile (hidden in header, kept in menu)
+   NordFrame (nf-) Premium CSS v4 (FIXED)
+   - warm wood background (lighter)
+   - readable sections as clean panels
+   - NO overlays blocking clicks
+   - mobile menu CSS-only (no stuck backdrop)
+   - CTA hidden in header on mobile (only in menu)
    ============================ */
 
 :root{
-  /* Wood / warm premium palette */
-  --bg: #15110d;
+  --bg: #231c14; /* lighter warm base */
   --surface: rgba(255,255,255,.06);
   --surface-2: rgba(255,255,255,.09);
   --text: rgba(255,255,255,.92);
@@ -16,13 +16,10 @@
   --muted-2: rgba(255,255,255,.56);
   --border: rgba(255,255,255,.14);
 
-  --brand: #ffffff;
-  --accent: #d6b98b;      /* warm wood highlight */
-  --accent-2: #b9a48a;    /* warm grey */
+  --accent: #d6b98b;
+  --accent-2: #b9a48a;
 
   --radius: 18px;
-  --radius-sm: 14px;
-
   --shadow: 0 16px 40px rgba(0,0,0,.45);
   --shadow-soft: 0 10px 26px rgba(0,0,0,.35);
 
@@ -39,28 +36,32 @@
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body.nf{
+  margin:0;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+
+  /* wood planks but subtle */
   background:
     repeating-linear-gradient(
       90deg,
-      rgba(150,120,90,.16) 0px,
-      rgba(150,120,90,.16) 90px,
-      rgba(170,140,105,.22) 90px,
-      rgba(170,140,105,.22) 92px
+      rgba(150,120,90,.06) 0px,
+      rgba(150,120,90,.06) 120px,
+      rgba(170,140,105,.10) 120px,
+      rgba(170,140,105,.10) 122px
     ),
     radial-gradient(
       1100px 700px at 50% -12%,
-      rgba(230,205,165,.32),
+      rgba(230,205,165,.30),
       transparent 62%
     ),
     linear-gradient(
       180deg,
-      #2a2118 0%,
-      #231c14 45%,
-      #1d1711 100%
+      #2f261c 0%,
+      #261f17 45%,
+      #1f1912 100%
     );
 }
-
-
 
 a{ color:inherit; }
 a:hover{ opacity:.98; }
@@ -97,14 +98,13 @@ img{ max-width:100%; display:block; }
 }
 
 /* ============================
-   Header (desktop like screenshot)
+   Header
    ============================ */
 .nf-header{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(21,17,13,.92); /* siltāks un “tīrs” */
-  backdrop-filter: none;
+  background: rgba(35,28,20,.94);
   border-bottom: 1px solid var(--border);
 }
 
@@ -117,9 +117,9 @@ img{ max-width:100%; display:block; }
 
 /* Brand */
 .nf-brand{ text-decoration:none; display:flex; align-items:center; }
-.nf-logo{ height: 84px; width:auto; display:block; }
+.nf-logo{ height: 44px; width:auto; display:block; } /* FIX: was 84 */
 
-/* Language link (small text near logo) */
+/* Lang link */
 .nf-langlink{
   text-decoration:none;
   color: var(--muted);
@@ -157,7 +157,7 @@ img{ max-width:100%; display:block; }
   background: rgba(255,255,255,.04);
 }
 
-/* Push nav to the right, keep CTA far right */
+/* push nav right */
 .nf-nav--desktop{ margin-left: auto; }
 
 /* ============================
@@ -174,7 +174,6 @@ img{ max-width:100%; display:block; }
   border: 1px solid var(--border);
   background: rgba(255,255,255,.04);
   color: var(--text);
-  box-shadow: none;
   transition: transform .12s ease, background .12s ease, border-color .12s ease;
 }
 .btn:hover{
@@ -189,25 +188,21 @@ img{ max-width:100%; display:block; }
 .btn-primary:hover{
   background: linear-gradient(135deg, rgba(214,185,139,.28), rgba(255,255,255,.08));
 }
-
-/* Desktop CTA tuning */
 .nf-cta{
   white-space: nowrap;
-  padding: 9px 14px; /* slightly slimmer */
+  padding: 9px 14px;
 }
 
 /* ============================
-   Mobile nav (CSS-only)
+   Mobile nav (CSS-only) - SAFE (no click blocking when closed)
    ============================ */
-
-/* Toggle input hidden but functional */
 .nf-nav__toggle{
   position:absolute;
   opacity:0;
   pointer-events:none;
 }
 
-/* Burger (shown on mobile only) */
+/* burger */
 .nf-burger{
   display:none;
   width: 40px;
@@ -228,7 +223,7 @@ img{ max-width:100%; display:block; }
   border-radius: 2px;
 }
 
-/* Mobile panel hidden by default */
+/* panel */
 .nf-nav__panel{
   position: fixed;
   top: 72px;
@@ -239,12 +234,13 @@ img{ max-width:100%; display:block; }
 
   border: 1px solid var(--border);
   border-radius: 18px;
-  background: rgba(21,17,13,.92);
+  background: rgba(35,28,20,.96);
   box-shadow: var(--shadow);
 
   padding: 12px;
   display:none;
-   /* ✅ CRITICAL: when hidden, it must not block clicks */
+
+  /* IMPORTANT: never block clicks when hidden */
   pointer-events: none;
   z-index: 60;
 }
@@ -294,84 +290,71 @@ img{ max-width:100%; display:block; }
   flex-wrap: wrap;
 }
 
-/* Backdrop */
+/* backdrop */
 .nf-nav__backdrop{
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.45);
+  background: rgba(0,0,0,.35);
   display:none;
 
-  /* ✅ CRITICAL: when hidden, it must not block clicks */
-  pointer-events: none;
+  pointer-events: none; /* hidden -> no blocking */
   z-index: 55;
 }
 
-/* When toggled ON -> show panel + backdrop */
+/* OPEN state */
 .nf-nav__toggle:checked ~ .nf-nav__panel{
   display:block;
-  pointer-events: auto; /* ✅ only when open */
+  pointer-events:auto;
 }
 .nf-nav__toggle:checked ~ .nf-nav__backdrop{
   display:block;
-  pointer-events: auto; /* ✅ only when open */
+  pointer-events:auto;
 }
 
-/* Toggle ON -> show panel + backdrop */
-.nf-nav__toggle:checked ~ .nf-nav__panel{ display:block; }
-.nf-nav__toggle:checked ~ .nf-nav__backdrop{ display:block; }
-
-/* Mobile breakpoint */
+/* mobile breakpoint */
 @media (max-width: 920px){
   .nf-nav--desktop{ display:none; }
   .nf-burger{ display:inline-flex; }
 
-  /* Key: CTA NOT in header on mobile (massive issue fixed) */
+  /* CTA hidden in header on mobile */
   .nf-cta{ display:none; }
 
-  /* Make header slightly tighter */
   .nf-logo{ height: 38px; }
   .nf-langlink{ padding: 6px 8px; font-size: 13px; }
 }
 
-/* Optional focus style */
 .nf-nav__item:focus{
-  outline: none;
+  outline:none;
   box-shadow: 0 0 0 6px rgba(214,185,139,.12);
 }
 
 /* ============================
-   Sections + Typography
+   Sections + Typography (FIXED: no overlay blocking clicks)
    ============================ */
 .section{ padding: 64px 0; }
 .section-header{ margin-bottom: 18px; }
-
-.section{
-  position: relative;
-  padding: 64px 0;
-}
-
-/* ŠIS ir "bring to back" efekts */
-.section::before{
-  content:"";
-  position:absolute;
-  inset: 0;
-  background: rgba(20,16,12,.85); /* silts, bet tīrs */
-  backdrop-filter: none;
-  z-index: 0;
-}
-
-/* Saturs virs virskārtas */
-.section > .container{
-   background: rgba(20,16,12,.88);
-  border-radius: 22px;
-  padding: 42px 36px;
-}
-
 
 h1{ font-size: var(--h1); line-height: 1.08; margin: 10px 0 12px; }
 h2{ font-size: var(--h2); line-height: 1.18; margin: 0 0 10px; }
 h3{ font-size: var(--h3); line-height: 1.25; margin: 0 0 8px; }
 p{ font-size: var(--p); margin: 0 0 12px; }
+
+/* Make each section readable like your card example */
+.section > .container{
+  position: relative;          /* ✅ CRITICAL */
+  z-index: 1;                  /* ✅ CRITICAL */
+  background: rgba(35,28,20,.72);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 22px;
+  padding: 42px 36px;
+}
+
+/* hero should NOT be boxed */
+.nf-hero > .container{
+  background: transparent;
+  border: 0;
+  padding: 0 var(--pad);
+}
 
 /* ============================
    Hero
@@ -415,9 +398,7 @@ p{ font-size: var(--p); margin: 0 0 12px; }
   color: var(--muted);
 }
 
-/* ============================
-   Steps list
-   ============================ */
+/* Steps list */
 .nf-steps{
   list-style: none;
   padding-left: 0;
@@ -447,11 +428,8 @@ p{ font-size: var(--p); margin: 0 0 12px; }
 }
 .card li{ margin: 6px 0; }
 
-/* ============================
-   Form
-   ============================ */
+/* Form */
 .nf-form h3{ margin-bottom: 10px; }
-
 .nf-field{ display:block; margin: 10px 0; }
 
 .nf-field__label{
@@ -482,13 +460,11 @@ p{ font-size: var(--p); margin: 0 0 12px; }
   font-size: 13px;
 }
 
-/* ============================
-   Footer
-   ============================ */
+/* Footer */
 .nf-footer{
   border-top: 1px solid var(--border);
   padding: 28px 0;
-  background: rgba(0,0,0,.14);
+  background: rgba(0,0,0,.12);
 }
 
 .nf-footer__inner{
@@ -505,9 +481,18 @@ p{ font-size: var(--p); margin: 0 0 12px; }
   padding: 6px 8px;
   border-radius: 10px;
 }
-
 .nf-footer__nav a:hover{
   color: var(--text);
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.10);
+}
+
+/* Small screens padding */
+@media (max-width: 920px){
+  .section > .container{
+    padding: 30px 18px;
+  }
+  .nf-hero > .container{
+    padding: 0 var(--pad);
+  }
 }
