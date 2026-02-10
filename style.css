@@ -157,9 +157,38 @@ img{ max-width:100%; display:block; }
   background: rgba(255,255,255,.04);
 }
 
+/*HERO*/--------------------------------------------------------------------------------------------
+.nf-hero__content{
+  position: relative;
+  z-index: 1;
+}
+
+.nf-hero__panel{
+  max-width: 640px;
+  background: rgba(35,28,20,.72);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 22px;
+  padding: 42px 36px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.nf-hero__content{
+  position: relative;
+  z-index: 1;
+}
+
+.nf-hero__panel{
+  max-width: 640px;
+  background: rgba(35,28,20,.72);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 22px;
+  padding: 42px 36px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
 /* push nav right */
 .nf-nav--desktop{ margin-left: auto; }
-
+------------------------------------------------------------------------------------------------
 /* ============================
    Buttons
    ============================ */
